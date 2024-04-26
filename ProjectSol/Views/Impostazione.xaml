@@ -1,0 +1,120 @@
+﻿<Window x:Class="ProjectSol.Impostazione"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectSol"
+        mc:Ignorable="d"
+        Title="Impostazioni d'avvio" Height="450" Width="810" 
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" >
+    <Grid >
+        
+        <Border CornerRadius="25" BorderBrush="Black" BorderThickness="2" Padding="6" Background="AliceBlue" >
+            <Grid>
+                <Grid VerticalAlignment="Top" Height="30" HorizontalAlignment="Right" Width="230" Margin="0,5,5,0" >
+                    <Button Content="X"  Width="25" Margin="200,0,6,0" Click="Close_Click" Background="Red" />
+                    <Button Content="[]"  Width="25"  Margin="170,0,32,0" Click="Maximize_Click"/>
+                    <Button Content="-" Width="25"  Margin="125,0,44,0" Click="Minimize_Click"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Column="0" Grid.Row="0">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="2" Grid.Row="2" Text="Risoluzione schermo" VerticalAlignment="Center"/>
+                <ComboBox x:Name="Risoluzioni" Grid.Column="1" Grid.Row="2" Width="120" Height="25" SelectedIndex="0"/>
+                <TextBlock Grid.Column="2" Grid.Row="1" Text="Difficoltà" VerticalAlignment="Center"/>
+                <ComboBox x:Name="Difficolta" Grid.Column="1" Grid.Row="1" Width="120" Height="25" SelectedIndex="0"/>
+            </Grid>
+
+            <Grid Grid.Column="0" Grid.Row="1">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="2" Grid.Row="0" Text="Lingua" VerticalAlignment="Center"/>
+                <ComboBox x:Name="Lingua" Grid.Column="1" Grid.Row="0" Width="120" Height="25" SelectedIndex="0"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.RowSpan="2" Grid.Row="0" Margin="0,0,0,10">
+                <Grid>
+                    <TabControl Margin="10,33,10,10" BorderBrush="Gainsboro">
+                        <TabControl.Resources>
+                            <Style TargetType="TabItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TabItem">
+                                            <!--The four values of CornerRadius represent the four corners of the TabItem.-->
+                                            <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="8,8,0,0" Margin="2,0">
+                                                <ContentPresenter x:Name="ContentSite"  
+                                        VerticalAlignment="Center"  
+                                        HorizontalAlignment="Center"  
+                                        ContentSource="Header"  
+                                        Margin="10,2"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="False">
+                                                    <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TabControl.Resources>
+                        
+                        <TabItem Header="Another settings">
+                            <Label >
+                                
+                            </Label>
+                            
+                            
+                        </TabItem>
+                        
+                        <TabItem Header="Security" HorizontalAlignment="Left" Width="68" />
+                        <TabItem Header="Details" />
+                    </TabControl>
+                </Grid>
+
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</Window>
