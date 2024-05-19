@@ -50,9 +50,6 @@
                     </Border>
                     
                     <Border  Grid.Row="1" BorderThickness="2" BorderBrush="White"   Margin="10,10">
-                        
-                        
-                       
                     </Border>
                     
                 </Grid>
@@ -66,12 +63,9 @@
 
 
                     <Border  Grid.Row="0" BorderThickness="2" BorderBrush="White"  Margin="10,10">
-
-                        <Image x:Name="AnimationFrame">
+                        <Image x:Name="AnimationFrame" VerticalAlignment="Center" HorizontalAlignment="Center">
 
                         </Image>
-
-
                         <!--<ListView x:Name="AnimationFrame" Background="Black" ItemsSource="{Binding NotifyOnSourceUpdated=True}" Padding="35,70,0,0">
                             <ListView.ItemTemplate>
                                 <DataTemplate>

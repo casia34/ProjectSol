@@ -175,7 +175,7 @@ namespace ProjectSol.Views
                   DRS.GetHbitmap(),
                  IntPtr.Zero,
                  System.Windows.Int32Rect.Empty,
-                 BitmapSizeOptions.FromWidthAndHeight(500, 500));
+                 BitmapSizeOptions.FromWidthAndHeight(1000, 1000));
             });
         }
 

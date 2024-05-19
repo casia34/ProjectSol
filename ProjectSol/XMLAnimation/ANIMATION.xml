@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Animations>
+
+	<monster>
+		<body>
+			<ValueofX>300</ValueofX>
+			<ValueofY>150</ValueofY>
+			<ValueofWIDTH>200</ValueofWIDTH>
+			 height="300" fill="DarkSlateGray" stroke="Black"/>
+		</body>
+		<head>
+			<ellipse x="350" y="100" width="100" height="100" fill="Gray" stroke="Black"/>
+		</head>
+		<eyes>
+			<leftEye>
+				<ellipse x="370" y="130" width="20" height="20" fill="Red" stroke="Black"/>
+			</leftEye>
+			<rightEye>
+				<ellipse x="410" y="130" width="20" height="20" fill="Red" stroke="Black"/>
+			</rightEye>
+		</eyes>
+		<mouth>
+			<curve stroke="Black">
+				<point x="370" y="170"/>
+				<point x="400" y="190"/>
+				<point x="430" y="170"/>
+			</curve>
+		</mouth>
+		<armor>
+			<plate>
+				<rectangle x="300" y="250" width="200" height="30" fill="DarkSlateGray" stroke="Black"/>
+			</plate>
+			<plate>
+				<rectangle x="300" y="300" width="200" height="30" fill="DarkSlateGray" stroke="Black"/>
+			</plate>
+		</armor>
+		<arms>
+			<leftArm>
+				<polygon fill="DarkSlateGray" stroke="Black">
+					<point x="300" y="200"/>
+					<point x="250" y="250"/>
+					<point x="250" y="350"/>
+					<point x="300" y="300"/>
+				</polygon>
+			</leftArm>
+			<rightArm>
+				<polygon fill="DarkSlateGray" stroke="Black">
+					<point x="500" y="200"/>
+					<point x="550" y="250"/>
+					<point x="550" y="350"/>
+					<point x="500" y="300"/>
+				</polygon>
+			</rightArm>
+		</arms>
+		<weapon>
+			<polygon fill="Gray" stroke="Black">
+				<point x="550" y="250"/>
+				<point x="600" y="230"/>
+				<point x="600" y="350"/>
+				<point x="550" y="370"/>
+			</polygon>
+		</weapon>
+		<legs>
+			<leftLeg>
+				<polygon fill="DarkSlateGray" stroke="Black">
+					<point x="350" y="450"/>
+					<point x="330" y="550"/>
+					<point x="370" y="550"/>
+					<point x="390" y="450"/>
+				</polygon>
+			</leftLeg>
+			<rightLeg>
+				<polygon fill="DarkSlateGray" stroke="Black">
+					<point x="450" y="450"/>
+					<point x="430" y="550"/>
+					<point x="470" y="550"/>
+					<point x="490" y="450"/>
+				</polygon>
+			</rightLeg>
+		</legs>
+	</monster>
+</Animations>
