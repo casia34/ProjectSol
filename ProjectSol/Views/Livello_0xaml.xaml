@@ -3,10 +3,169 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProjectSol.Views"
         mc:Ignorable="d"
-        Title="Livello_0xaml" >
+        Title="Livello_0xaml" 
+        Width="800"
+        Height="400"
+        Loaded="Page_Loaded"
+        >
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="2" >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"  />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="2" Background="Black" >
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border  Grid.Row="0" BorderThickness="2"   Margin="10,10">
+                        <ListView  Background="Black" ItemsSource="{Binding NotifyOnSourceUpdated=True}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FirstName}" ></TextBlock>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Border>
+                    
+                    <Border  Grid.Row="1" BorderThickness="2" BorderBrush="White"   Margin="10,10">
+                        
+                        
+                       
+                    </Border>
+                    
+                </Grid>
+
+                <Grid Grid.Column="1">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="78"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Border  Grid.Row="0" BorderThickness="2" BorderBrush="White"  Margin="10,10">
+
+                        <Image x:Name="AnimationFrame">
+
+                        </Image>
+
+
+                        <!--<ListView x:Name="AnimationFrame" Background="Black" ItemsSource="{Binding NotifyOnSourceUpdated=True}" Padding="35,70,0,0">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Animation}" Foreground="Gold" TextAlignment="Center" FontSize="25"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>-->
+
+                        <!--<Image Width="200" x:Name="AnimationFrame">
+                            <Image.Source>
+                                <BitmapImage DecodePixelWidth="200" 
+                                              UriSource="C:\Users\leoci\OneDrive\Immagini\Cattura.PNG" />
+                            </Image.Source>
+                        </Image>-->
+
+                    </Border>
+
+                    <Border  Grid.Row="1" BorderThickness="2"   Margin="10,10">
+
+                        <ListView  Background="Transparent" ItemsSource="{Binding NotifyOnSourceUpdated=True}" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <TextBlock Text="{Binding FirstName}" FontSize="10" ></TextBlock>
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </Border>
+                </Grid>
+            </Grid>
+            
+        </Grid>
         
+        <Grid Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+            <TabControl Margin="10,33,10,10" BorderBrush="Gainsboro" Grid.Row="1">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <!--The four values of CornerRadius represent the four corners of the TabItem.-->
+                                    <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="8,8,0,0" Margin="2,0">
+                                        <ContentPresenter x:Name="ContentSite"  
+                                                            VerticalAlignment="Center"  
+                                                            HorizontalAlignment="Center"  
+                                                            ContentSource="Header"  
+                                                            Margin="10,2"
+                                                          />   
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TabControl.Resources>
+
+                <TabItem Header="ABILITIS">
+                   
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Button x:Name="Attacc" Content="ATT" Grid.Column="1" Width="50" Height="25" />
+                        </Grid>
+                       
+                
+                </TabItem>
+
+                <TabItem Header="inv" HorizontalAlignment="Left" Width="68" />
+                <TabItem Header="Details" />
+            </TabControl>
+        </Grid>
+       
     </Grid>
 </Window>

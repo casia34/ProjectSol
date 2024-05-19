@@ -32,7 +32,7 @@ namespace ProjectSol
             RisoluzioniClasse risoluzioniClasse = new RisoluzioniClasse();
 
 
-            // Ciclo le proprietà di un metodo per ciclare i valori dentro un oggetto 
+            // Ciclo le proprietà di un oggetto per ciclare i valori dentro un oggetto 
             ListaRisoluzioni.Add("Nessuna Risoluzione selezionata");
             Type myType = risoluzioniClasse.GetType();
             IList<PropertyInfo> props = new List<PropertyInfo>(myType.GetProperties());
@@ -46,7 +46,7 @@ namespace ProjectSol
             ListaDifficolta.Add("Facile");
             ListaDifficolta.Add("Normale");
             ListaDifficolta.Add("Difficile");
-            ListaOfLingue.AddRange([ "Italiano", "Inglese", "Zingarese"]);
+            ListaOfLingue.AddRange(new List<string>{ "Italiano", "Inglese", "Zingarese"});
             Risoluzioni.ItemsSource = ListaRisoluzioni;
             Difficolta.ItemsSource = ListaDifficolta;
             Lingua.ItemsSource = ListaOfLingue;
